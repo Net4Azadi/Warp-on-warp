@@ -209,7 +209,23 @@ fi
         local port=$(echo "$endpoint" | awk -F':' '{print $2}')
 
 # ترکیب رشته و متغیرها در یک متغیر دیگر
-new_json='
+new_json='{
+"type": "wireguard",
+      "tag": "Warp-IR'"$i"'",
+      "server": "'"$ip"'",
+      "server_port": '"$port"',
+
+      "local_address": [
+        "172.16.0.2/32",
+        "'"$w_ip"'"
+      ],
+      "private_key": "'"$w_pv"'",
+      "peer_public_key": "'"$w_pb"'",
+      "reserved": ['$w_res'],
+
+      "mtu": 1280,
+      "fake_packets": "5-10"
+    },
       
     {
       "type": "wireguard",
