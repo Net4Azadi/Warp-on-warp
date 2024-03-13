@@ -261,16 +261,16 @@ full_json='
   ]
 }
 '
-echo "$full_json" > output.json
+echo "$full_json" > Net4Azadi.json
 echo ""
 echo "${GREEN}Upload Files to Get Link${RESET}"
 echo "------------------------------------------------------------"
 echo ""
 echo "Your link:"
-curl https://bashupload.com/ -T output.json | sed -e 's#wget#Your Link#' -e 's#https://bashupload.com/\(.*\)#https://bashupload.com/\1?download=1#'
+curl https://bashupload.com/ -T Net4Azadi.json | sed -e 's#wget#Your Link#' -e 's#https://bashupload.com/\(.*\)#https://bashupload.com/\1?download=1#'
 echo "------------------------------------------------------------"
 echo ""
-mv output.json output_$(date +"%Y%m%d_%H%M%S").json
+mv Net4Azadi.json Net4Azadi_$(date +"%Y%m%d_%H%M%S").json
 
 }
 menu(){
